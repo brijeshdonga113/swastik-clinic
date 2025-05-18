@@ -5,6 +5,7 @@ import {
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import logo from '../assests/logoWhite.png';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -20,16 +21,16 @@ const Footer = () => {
         </div>
       </div>
 
-        <div className="footer-box">
+      <div className="footer-box">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/about'>About</a></li>
-            <li><a href='/treatments'>Treatments</a></li>
-            <li><a href='/blogs'>Blogs</a></li>
-            <li><a href='/contact'>Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/treatments">Treatments</Link></li>
+            <li><Link to="/blogs">Blogs</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
-        </div>
+      </div>
 
         <div className="footer-box">
           <h4>Contact</h4>
