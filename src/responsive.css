@@ -1,0 +1,102 @@
+/* =======================
+   GLOBAL RESPONSIVE RULES
+==========================*/
+
+/* Base styles for mobile-first */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Make images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Consistent spacing for sections */
+  .section {
+    padding: 2rem 1rem;
+  }
+  
+  /* Responsive typography */
+  h1, h2, h3 {
+    line-height: 1.3;
+  }
+  
+  /* Buttons */
+  .btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    white-space: nowrap;
+  }
+  
+  /* Flex/Grid responsiveness */
+  .flex-row,
+  .about-content,
+  .footer-container,
+  .why-section {
+    flex-wrap: wrap;
+  }
+  
+  /* Responsive footer columns */
+  .footer-box {
+    flex: 1 1 100%;
+  }
+  
+  /* ===================================
+     TABLET BREAKPOINT (768px and up)
+  ==================================== */
+  @media (min-width: 768px) {
+    .page-container {
+      padding: 0 2rem;
+    }
+  
+    .about-content,
+    .why-section {
+      flex-wrap: nowrap;
+      gap: 2rem;
+    }
+  
+    .footer-box {
+      flex: 1 1 45%;
+    }
+  
+    .main-nav {
+      flex-direction: row;
+      position: static;
+      display: flex !important;
+      background: none;
+      padding: 0;
+    }
+  
+    .hamburger {
+      display: none !important;
+    }
+  }
+  
+  /* ===================================
+     DESKTOP BREAKPOINT (1024px and up)
+  ==================================== */
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .btn {
+      font-size: 1.1rem;
+    }
+  
+    .footer-box {
+      flex: 1 1 22%;
+    }
+  }
+  
