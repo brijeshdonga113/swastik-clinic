@@ -1,0 +1,47 @@
+.treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding-top: 1rem;
+  }
+  
+  .treatment-card {
+    background-color: rgba(157, 194, 60, 0.1); /* light version of secondary */
+    border: 1px solid var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .treatment-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .treatment-card p {
+    flex-grow: 1;
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+  
+  .treatment-card .btn {
+    align-self: start;
+    font-size: 0.9rem;
+    background-color: var(--primary-color);
+    color: var(--text-on-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .treatment-card .btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  

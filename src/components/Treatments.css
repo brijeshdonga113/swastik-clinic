@@ -1,0 +1,56 @@
+.treatment-section {
+    padding: 2rem 2rem 4rem;
+    background: #f9fdfd;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .treatment-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #002d4c;
+  }
+  
+  .treatment-section p {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: #444;
+    font-size: 1rem;
+  }
+  
+  .treatment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .treatment-box {
+    background: rgba(158, 194, 60, 0.4);
+    padding: 1.5rem 1rem 0rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    border: 2px solid var(--primary-color);  
+
+  }
+  
+  .treatment-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+    background-color: #eaf9fa;
+  }
+  
+  .treatment-box p {
+    font-size: 0.95rem;
+    color:#002d4c;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+  
+  .treatment-icon {
+    font-size: 2.2rem;
+    color:#002d4c;
+    margin-bottom: 0.5rem;
+  }
+  
