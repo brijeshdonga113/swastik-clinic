@@ -1,3 +1,8 @@
+main > .section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .treatment-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -28,9 +33,10 @@
     color: #444;
     font-size: 0.95rem;
     margin-bottom: 1rem;
+    
   }
   
-  .treatment-card .btn {
+  /* .treatment-card .btn {
     align-self: start;
     font-size: 0.9rem;
     background-color: var(--primary-color);
@@ -38,7 +44,9 @@
     padding: 0.5rem 1rem;
     border-radius: 20px;
     transition: background-color 0.3s ease;
-  }
+    text-align: center;
+    display: inline-block;
+  } */
   
   .treatment-card .btn:hover {
     background-color: var(--secondary-color);

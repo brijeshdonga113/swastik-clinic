@@ -3,40 +3,41 @@
   --secondary-color: #9ec23c;
   --third-color: #eaf9fa;
   --text-on-primary: #ffffff;
+
+  --global-padding-x: 1.5rem;
+  --global-padding-y: 2rem;
 }
 
 html, body {
-  overflow-x: hidden;
-}
-
-
-body, .App {
   margin: 0;
   padding: 0;
-  text-align: center;
+  overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
   background-color: #f7fcfc;
   color: #002d4c;
 }
 
+body, .App {
+  text-align: center;
+}
+
 /* Layout Containers */
 .container,
-.page-container {
-  /* max-width: 1280px;
+.page-container,
+main,
+section,
+footer,
+header {
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  width: 100%;
-  box-sizing: border-box; */
-  width: 100%;
-  max-width: 100%;
+  /* padding: var(--global-padding-y) var(--global-padding-x); */
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 /* Section spacing */
 .section {
   margin: 2rem 0;
-  padding: 1.5rem 1rem;
 }
 
 .section:first-child {
@@ -91,10 +92,10 @@ img.rounded,
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Logo Special Size */
+/* Logo adjustments */
 .site-logo {
-  height: 50px;        /* reduced from 180px */
-  position: static;    /* avoid absolute positioning */
+  height: 50px;
+  position: static;
   transform: none;
 }
 
@@ -105,5 +106,22 @@ img.rounded,
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  :root {
+    --global-padding-x: 1rem;
+    --global-padding-y: 1.5rem;
+  }
+
+  .section h2,
+  .page-heading {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 1rem;
   }
 }

@@ -61,7 +61,7 @@ const TreatmentsP = () => {
           <div className="treatment-card" key={index}>
             <h3>{item.title}</h3>
             <p>{item.desc}</p>
-            <a href="#contact" className="btn">Read More</a>
+            {/* <a href='/blogs' className="btn">Read More</a> */}
           </div>
         ))}
       </div>

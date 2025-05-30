@@ -1,13 +1,18 @@
+main > .section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 header.main-header {
   position: sticky;
   background: var(--primary-color);
-  padding: 1.5rem 2rem;
+  /* padding: 1rem 2rem; */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 10;
   overflow: hidden;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 .header-inner {
