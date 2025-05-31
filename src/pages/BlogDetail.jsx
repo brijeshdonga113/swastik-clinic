@@ -14,12 +14,19 @@ const BlogDetail = () => {
 
   useEffect(() => {
     const fetchBlog = async () => {
+    try {
+      console.log("Fetching blog with ID:", id);
       const blogRef = doc(db, 'blogs', id);
       const blogSnap = await getDoc(blogRef);
       if (blogSnap.exists()) {
         setBlog(blogSnap.data());
+      } else {
+        console.error("No such blog exists in Firestore.");
       }
-    };
+    } catch (err) {
+      console.error("Error fetching blog:", err);
+    }
+  };
 
     const fetchRelatedBlogs = async () => {
       const blogCollection = collection(db, 'blogs');
