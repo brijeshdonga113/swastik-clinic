@@ -5,6 +5,8 @@ import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import Blogs from './pages/Blogs';
 import TreatmentsPage from './pages/TreatmentsPage';
+import BlogDetail from './pages/BlogDetail';
+import SubmitBlog from './pages/SubmitBlog';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/Blogs" element={<Blogs />} />
       <Route path="/treatments" element={<TreatmentsPage />} />
+      <Route path="/blogs/:id" element={<BlogDetail />} />
+      <Route path="/submit-blog" element={<SubmitBlog />} />
     </Routes>
   </Router>
   );

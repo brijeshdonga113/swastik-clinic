@@ -27,9 +27,32 @@ const Contact = () => {
 
         <form
           className="contact-form"
-          action="mailto:satyamhomoeopathy@gmail.com"
-          method="POST"
-          encType="text/plain"
+          onSubmit={async (e) => {
+            e.preventDefault();
+
+            const form = e.target;
+            const data = {
+              name: form.name.value,
+              email: form.email.value,
+              phone: form.phone.value,
+              message: form.message.value,
+            };
+
+            const response = await fetch("https://formspree.io/f/xeokjrnq", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+              alert("Thanks! We'll get back to you soon.");
+              form.reset();
+            } else {
+              alert("Something went wrong. Please try again.");
+            }
+          }}
         >
           <h3>Quick Inquiry</h3>
           <input type="text" name="name" placeholder="Your Name" required />
@@ -37,7 +60,8 @@ const Contact = () => {
           <input type="tel" name="phone" placeholder="Phone Number" required />
           <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
           <button type="submit">Submit</button>
-        </form>
+      </form>
+
       </div>
     </section>
   );

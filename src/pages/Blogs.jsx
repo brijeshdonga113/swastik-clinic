@@ -1,44 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Blogs.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import image from '../assests/whyImg3.png';
 import BlogFAQ from '../components/BlogFAQ';
 
-const blogData = [
-  {
-    title: 'What is Infertility and What Are the Causes?',
-    description: 'Infertility is a problem that happens to many couples causing stress, anxiety, and emotional strain...',
-    image: image,
-  },
-  {
-    title: 'Homeopathic Treatment for Male Infertility',
-    description: 'Many men around the world find it hard to become fathers. This can make them feel sad or stressed...',
-    image: image,
-  },
-  {
-    title: 'Best Ways to Get Glowing Skin in Summer',
-    description: 'Summer is here, and with it comes the challenge of keeping your skin hydrated and glowing...',
-    image: image,
-  },
-  {
-    title: 'Managing Stress Naturally',
-    description: 'Explore natural ways like homeopathy, yoga, and herbal therapy to reduce stress...',
-    image: image,
-  },
-  {
-    title: 'Boost Immunity with Homeopathy',
-    description: 'Learn how homeopathic remedies can help strengthen your immune system and improve resilience...',
-    image: image,
-  },
-  {
-    title: 'Sleep Tips for Better Health',
-    description: 'Good sleep supports healing and immunity. Discover tips to improve sleep naturally...',
-    image: image,
-  },
-];
+import db from '../firebaseConfig';
+import { collection, getDocs } from 'firebase/firestore';
 
 const Blogs = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const blogCollection = collection(db, 'blogs');
+      const blogSnapshot = await getDocs(blogCollection);
+      const blogList = blogSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setBlogs(blogList);
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <>
       <Header />
@@ -53,12 +35,12 @@ const Blogs = () => {
         </section>
 
         <section className="blogs-grid">
-          {blogData.map((blog, index) => (
+          {blogs.map((blog, index) => (
             <div className="blog-card" key={index}>
-              <img src={blog.image} alt={blog.title} />
+              <img src={blog.imageUrl} alt={blog.title} />
               <h3>{blog.title}</h3>
-              <p>{blog.description}</p>
-              <a className="learn-more" href="#">Learn More</a>
+              <p>{blog.summary}</p>
+              <a className="learn-more" href={`/blogs/${blog.id}`}>Learn More</a>
             </div>
           ))}
         </section>

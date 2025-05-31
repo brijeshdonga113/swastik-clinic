@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../assests/logoWhite.png'; 
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="main-header">
       <div className="page-container header-inner">
@@ -11,7 +13,11 @@ const Header = () => {
           <img src={logo} alt="Swastik Logo" className="site-logo" />
         </div>
 
-        <nav className="main-nav">
+        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </button>
+
+        <nav className={`main-nav ${menuOpen ? 'open' : ''}`}>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/treatments">Treatments</Link>
