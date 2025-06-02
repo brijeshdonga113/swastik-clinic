@@ -59,7 +59,10 @@ const BlogDetail = () => {
         </div>
 
         <div className="blog-detail-card">
-          <img src={blog.imageUrl} alt={blog.title} className="blog-detail-img" />
+            {blog.imageUrl && (
+            <img src={blog.imageUrl} alt={blog.title} className="blog-detail-img" />
+            )}
+          
           <h2>{blog.title}</h2>
           <p className="blog-detail-content">{blog.content}</p>
         </div>
