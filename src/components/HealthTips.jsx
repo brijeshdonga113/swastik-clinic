@@ -6,6 +6,7 @@ import img1 from "../assests/whyImg.png";
 import img2 from "../assests/whyImg2.png";
 import img3 from "../assests/whyImg3.png";
 import img4 from "../assests/whyImg4.png";
+import { Link } from 'react-router-dom';
 
 
 
