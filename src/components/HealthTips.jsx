@@ -44,7 +44,7 @@ const HealthTips = () => {
             <div className="blog-content">
               <h4>{tip.title}</h4>
               <p>{tip.desc}</p>
-              <a href='/blogs'>Read More</a>
+              <Link to="/blogs">Read More</Link>
             </div>
           </div>
         ))}
