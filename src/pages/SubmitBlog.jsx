@@ -1,9 +1,12 @@
+// SubmitBlog.jsx
 import React, { useState } from 'react';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 import db from '../firebaseConfig';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './SubmitBlog.css';
+
+import MDEditor from '@uiw/react-md-editor'; // ✨ NEW editor import
 
 const SubmitBlog = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +20,10 @@ const SubmitBlog = () => {
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleContentChange = value => {
+    setFormData({ ...formData, content: value || '' });
   };
 
   const handleSubmit = async e => {
@@ -39,6 +46,7 @@ const SubmitBlog = () => {
       <main className="submit-blog-page">
         <h2>Submit a Blog</h2>
         {submitted && <p className="success">✅ Your blog was submitted!</p>}
+
         <form onSubmit={handleSubmit} className="submit-form">
           <input
             type="text"
@@ -64,14 +72,16 @@ const SubmitBlog = () => {
             onChange={handleChange}
             required
           />
-          <textarea
-            name="content"
-            placeholder="Full Blog Content"
-            value={formData.content}
-            onChange={handleChange}
-            rows={8}
-            required
-          ></textarea>
+
+          <label>Blog Content:</label>
+          <div data-color-mode="light">
+            <MDEditor
+              value={formData.content}
+              onChange={handleContentChange}
+              height={300}
+            />
+          </div>
+
           <button type="submit" className="btn">Submit Blog</button>
         </form>
       </main>
