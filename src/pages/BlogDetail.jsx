@@ -36,7 +36,7 @@ const BlogDetail = () => {
         .map(doc => ({ id: doc.id, ...doc.data() }))
         .filter(blog => blog.id !== id);
 
-      // Pick top 3 related
+      // Pick top 3 related blogs
       setRelatedBlogs(allBlogs.slice(0, 3));
     };
 
@@ -54,43 +54,47 @@ const BlogDetail = () => {
       </Helmet>
 
       <Header />
+
       <main className="blogs-page">
-        {/* Breadcrumb */}
-        <div className="breadcrumb">
-          <Link to="/">Home</Link> / <Link to="/blogs">Blogs</Link> / <span>{blog.title}</span>
-        </div>
 
-        {/* Blog Detail */}
-        <div className="blog-detail-card">
-          {blog.imageUrl && (
-            <img src={blog.imageUrl} alt={blog.title} className="blog-detail-img" />
-          )}
-          <h2>{blog.title}</h2>
 
-          <MarkdownPreview
-            source={blog.content}
-            className="blog-detail-markdown"
-          />
-        </div>
+  <div className="blog-detail-wrapper">  {/* NEW WRAPPER */}
+    <div className="blog-detail-card">
+      {blog.imageUrl && (
+        <img src={blog.imageUrl} alt={blog.title} className="blog-detail-img" />
+      )}
 
-        {/* Back Button */}
-        <button className="back-btn" onClick={() => window.history.back()}>
-          ← Back to Blogs
-        </button>
+      <div className="blog-detail-title">
+        <h2>{blog.title}</h2>
+      </div>
 
-        {/* Related Blogs */}
-        <h3 style={{ marginTop: "3rem" }}>Related Blogs</h3>
-        <div className="blog-detail-related-blogs">
-          {relatedBlogs.map((b) => (
-            <div className="blog-card" key={b.id}>
-              <img src={b.imageUrl} alt={b.title} />
-              <h3>{b.title}</h3>
-              <p>{b.description}</p>
-              <Link className="learn-more" to={`/blogs/${b.id}`}>Learn More</Link>
-            </div>
-          ))}
-        </div>
-      </main>
+      <div className="blog-detail-markdown">
+        <MarkdownPreview
+          source={blog.content}
+          className="blog-detail-markdown"
+        />
+      </div>
+    </div>
+  </div>
+  <div className="back-btn-wrapper">
+  <button className="back-btn" onClick={() => window.history.back()}>
+    ← Back to Blogs
+  </button>
+</div>
+
+  {/* Related Blogs */}
+  <h3 style={{ marginTop: "3rem", textAlign: "center" }}>Related Blogs</h3>
+  <div className="blog-detail-related-blogs-grid">
+    {relatedBlogs.map((b) => (
+      <div className="blog-card" key={b.id}>
+        <img src={b.imageUrl} alt={b.title} />
+        <h3>{b.title}</h3>
+        <p>{b.description}</p>
+        <a className="learn-more" href={`/blogs/${b.id}`}>Read More</a>
+      </div>
+    ))}
+  </div>
+</main>
 
       <Footer />
     </>
