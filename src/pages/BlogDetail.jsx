@@ -36,7 +36,7 @@ const BlogDetail = () => {
         .map(doc => ({ id: doc.id, ...doc.data() }))
         .filter(blog => blog.id !== id);
 
-      // Pick top 3 related (optional: sort by date/tags later)
+      // Pick top 3 related
       setRelatedBlogs(allBlogs.slice(0, 3));
     };
 
@@ -65,7 +65,6 @@ const BlogDetail = () => {
           {blog.imageUrl && (
             <img src={blog.imageUrl} alt={blog.title} className="blog-detail-img" />
           )}
-
           <h2>{blog.title}</h2>
 
           <MarkdownPreview
@@ -81,7 +80,7 @@ const BlogDetail = () => {
 
         {/* Related Blogs */}
         <h3 style={{ marginTop: "3rem" }}>Related Blogs</h3>
-        <div className="blogs-grid">
+        <div className="blog-detail-related-blogs">
           {relatedBlogs.map((b) => (
             <div className="blog-card" key={b.id}>
               <img src={b.imageUrl} alt={b.title} />

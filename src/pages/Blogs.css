@@ -1,6 +1,6 @@
 .blogs-page-section {
   padding: 3rem 2rem;
-  background-color: #ffffff;
+  background-color:  --var(--third-color);
   text-align: center;
   border-radius: 12px;
   margin: 1rem 0;
@@ -20,25 +20,27 @@
 
 .blogs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
   justify-content: center;
-  border-radius: 16px;
+  padding: 1rem 1rem;
 }
 
 .blogs-card {
   background: white;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
   border: 2px solid var(--primary-color);
 }
 
 .blogs-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   border-color: var(--secondary-color);
 }
 
@@ -48,6 +50,7 @@
   object-fit: cover;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+  background-color: #f0f0f0; /* fallback bg */
 }
 
 .blogs-card-content {
@@ -55,17 +58,23 @@
   text-align: left;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .blogs-card-content h4 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color: #0d7276;
+  min-height: 48px; /* force consistent height */
 }
 
 .blogs-card-content p {
   font-size: 0.9rem;
   color: #555;
+  flex-grow: 1;
 }
 
 .blogs-card-content a {
@@ -74,4 +83,21 @@
   color: var(--primary-color);
   font-weight: 500;
   text-decoration: none;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+  color: white;
 }
