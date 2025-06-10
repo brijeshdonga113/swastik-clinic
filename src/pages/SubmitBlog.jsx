@@ -112,11 +112,14 @@ const SubmitBlog = () => {
           )}
 
           <label>Blog Content:</label>
-          <MDEditor
-            value={formData.content}
-            onChange={handleContentChange}
-            style={{ minHeight: '300px' }}
-          />
+          <div data-color-mode="light">
+              <MDEditor
+                value={formData.content}
+                onChange={handleContentChange}
+                preview="edit"
+                style={{ minHeight: '300px', backgroundColor: 'white' }}
+              />
+            </div>
 
           <button type="submit" className="btn" disabled={uploading}>
             {uploading ? 'Uploading Image...' : 'Submit Blog'}
