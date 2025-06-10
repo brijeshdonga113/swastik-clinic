@@ -73,7 +73,7 @@
 }
 
 .learn-more {
-  color: var(--secondary-color);
+  color: --var(--primary-color);
   font-weight: 600;
   text-decoration: none;
   align-self: flex-start;

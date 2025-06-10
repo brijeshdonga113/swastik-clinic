@@ -66,6 +66,24 @@ const AboutPage = () => {
               </p>
             </div>
           </section>
+          <section className="about-content reverse">
+            <div className="about-image">
+              <img
+                src={img1}
+                alt="Dr. Akshay Chovatiya"
+                className="rounded-image"
+              />
+            </div>
+            <div className="about-text">
+              <h3>Dr. Akshay Chovatiya</h3>
+              <p>
+                Dr. Akshay is a trusted name in homeopathy in Surat. With advanced qualifications in homeopathy and counselling
+                psychology, he combines medical expertise with compassionate care. His goal is to address the root cause of your
+                health issues—not just the symptoms. Whether you’re searching for the best homeopathy doctor in Surat or
+                specialized care, Dr. Akshay’s holistic approach ensures you receive the best possible treatment.
+              </p>
+            </div>
+          </section>
           <BlogFAQ />
         </div>
       </main>
