@@ -1,105 +1,67 @@
-.about-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 1rem;
-  background-color: var(--third-color);
+.home-about-section {
+  padding: 3rem 1.5rem;
+  background: #eaf9fa ;
   border-radius: 20px;
   margin: 1rem 0;
-  box-sizing: border-box;
 }
 
-.about-image {
-  flex: 1 1 300px;
-  max-width: 400px;
-  text-align: center;
-
-  position: relative;
-  /* width: 300px; /* Adjust as needed */
-  /* height: 300px; */ 
-  background: radial-gradient(circle, #b3ecff, #9ec23c); /* blue gradient */
-  border-radius: 50%; /* makes the wrapper a circle */
+.home-about-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin: 0 auto; /* center horizontally */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-.about-image img {
+.home-about-image {
+  flex: 0 0 40%;
+  text-align: center;
+}
+
+.home-about-image img {
   width: 100%;
-  height: auto;
-  max-width: 100%;
+  max-width: 400px;
   border-radius: 16px;
-  display: block;
-  object-fit: contain;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.about-text {
-  flex: 1 1 300px;
+.home-about-text {
+  flex: 1;
+  min-width: 320px;
   padding: 1rem;
+  box-sizing: border-box;
   font-size: 1rem;
   color: #444;
   line-height: 1.6;
-  box-sizing: border-box;
 }
 
-.about-text h2,
-.about-text h4,
-.about-text p {
-  text-align: left;
-  margin: 0.5rem 0;
+.home-about-text h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
-.stats {
+.home-about-text h4 {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.home-about-text p {
+  margin-bottom: 1rem;
+}
+
+.home-about-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
 
-.stat-box {
-  background: white;
+.home-about-stat-box {
+  background: #fff;
   padding: 1rem;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   font-weight: 500;
-}
-
-/* Button */
-.btn {
-  background-color: var(--primary-color);
-  color: var(--text-on-primary);
-  padding: 0.6rem 1.2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-}
-
-.btn:hover {
-  background-color: var(--secondary-color);
-  color: var(--text-on-primary);
-}
-
-/* Optional fix for very small screens */
-@media (max-width: 480px) {
-  .about-section {
-    padding: 1.5rem 1rem;
-  }
-
-  .about-text,
-  .about-image {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .stat-box {
-    font-size: 0.95rem;
-  }
 }

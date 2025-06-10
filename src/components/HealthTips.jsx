@@ -1,6 +1,3 @@
-// HealthTips.jsx
-
-import React from 'react';
 import './HealthTips.css';
 import img1 from "../assests/whyImg.png";
 import img2 from "../assests/whyImg2.png";
@@ -36,20 +33,23 @@ const tips = [
 const HealthTips = () => {
   return (
     <section className="health-tips">
-      <h2>Homeopathy Health Tips</h2>
-      <p>Simple natural tips to maintain wellness and boost your immunity every day.</p>
-      <div className="blog-grid">
-        {tips.map((tip, i) => (
-          <div className="blog-card" key={i}>
-            <img src={tip.image} alt={tip.title} />
-            <div className="blog-content">
-              <h4>{tip.title}</h4>
-              <p>{tip.desc}</p>
-              <Link to="/blogs">Read More</Link>
+                <div className="health-tips-section">
+            <h2>Health Tips</h2>
+            <p>Some introduction text</p>
+
+            <div className="health-blog-grid">
+              {tips.map(tip => (
+                <div className="health-blog-card" key={tip.id}>
+                  <img src={tip.image} alt={tip.title} />
+                  <div className="health-blog-content">
+                    <h4>{tip.title}</h4>
+                    <p>{tip.desc}</p>
+                    <a href={`/blogs/}`}>Read More</a>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
     </section>
   );
 };

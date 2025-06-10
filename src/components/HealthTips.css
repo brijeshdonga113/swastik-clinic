@@ -1,35 +1,34 @@
-.health-tips {
+.health-tips-section {
   padding: 2rem 2rem 4rem;
   background: #ffffff;
   text-align: center;
-  border-radius:12px ;
+  border-radius: 12px;
   margin: 1rem 0rem;
 }
 
-.health-tips h2 {
+.health-tips-section h2 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   color: #0d7276;
 }
 
-.health-tips p {
+.health-tips-section p {
   max-width: 700px;
   margin: 0 auto 2rem;
   color: #444;
 }
 
-.blog-grid {
+.health-blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
   justify-content: center;
   border-radius: 16px;
-  
 }
 
-.blog-card {
+.health-blog-card {
   background: white;
-  border-radius: 16px; 
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
@@ -38,12 +37,12 @@
   border: 2px solid var(--primary-color);
 }
 
-.blog-card:hover {
+.health-blog-card:hover {
   transform: translateY(-6px);
   border-color: var(--secondary-color);
 }
 
-.blog-card img {
+.health-blog-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
@@ -51,25 +50,25 @@
   border-top-right-radius: 16px;
 }
 
-.blog-content {
+.health-blog-content {
   padding: 1.2rem;
   text-align: left;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
 }
 
-.blog-content h4 {
+.health-blog-content h4 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color: #0d7276;
 }
 
-.blog-content p {
+.health-blog-content p {
   font-size: 0.9rem;
   color: #555;
 }
 
-.blog-content a {
+.health-blog-content a {
   display: inline-block;
   margin-top: 0.8rem;
   color: var(--primary-color);

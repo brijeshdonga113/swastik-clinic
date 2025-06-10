@@ -1,88 +1,69 @@
-/* === Base Container === */
 .about-page {
-    padding: 1rem 1rem;
-    background-color: --var(--secondary-color);
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  /* === Header Section === */
-  .about-header {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .about-header h2 {
-    font-size: 2rem;
-    color: #0d7276;
-    margin-bottom: 1rem;
-  }
-  
-  /* === Intro Paragraph === */
-  .about-intro {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #333;
-  }
-  
-  /* === Doctor Sections === */
-  .about-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
-  }
-  
-  /* Reversed layout for alternate sections */
-  .about-content.reverse {
-    flex-direction: row-reverse;
-  }
-  
-  /* === Text Block === */
-  .about-text {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #444;
-  }
-  
-  /* Optional tweak for alignment in reverse layout */
-  .about-content.reverse .about-text {
-    text-align: left;
-  }
-  
-  /* === Image Block === */
-  .about-image {
-    flex: 1;
-    min-width: 280px;
-    max-width: 400px;
-  }
-  
-  .rounded-image {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* === Responsive Design (Optional) === */
-  @media (max-width: 768px) {
-    .about-content,
-    .about-content.reverse {
-      flex-direction: column;
-    }
-  
-    .about-text {
-      text-align: center;
-    }
-  
-    .about-content.reverse .about-text {
-      text-align: center;
-    }
-  }
-  
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #eaf9fa 0%, #ffffff 100%);
+}
+
+.about-page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.about-page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-page-header h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.about-page-intro {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.about-page-card {
+  background: #eaf9fa;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-page-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: radial-gradient(circle at center, #eaf9fa, #ffffff);
+  padding: 8px; /* optional: adds soft ring */
+}
+
+.about-page-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+}
+
+.about-page-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}

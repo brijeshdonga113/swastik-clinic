@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './Blogs.css';
+import { collection, getDocs } from 'firebase/firestore';
+import db from '../firebaseConfig';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import BlogFAQ from '../components/BlogFAQ';
-
-import db from '../firebaseConfig';
-import { collection, getDocs } from 'firebase/firestore';
+import './Blogs.css';
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -24,28 +22,23 @@ const Blogs = () => {
   return (
     <>
       <Header />
-      <main className="blogs-page">
-        <section className="tags-section">
-          <button className="tag active">All</button>
-          <button className="tag">Infertility</button>
-          <button className="tag">Skin</button>
-          <button className="tag">Stress</button>
-          <button className="tag">Immunity</button>
-          <button className="tag">Sleep</button>
-        </section>
+      <main className="blogs-page-section">
+        <h2>Our Blog</h2>
+        <p>Explore latest health tips, remedies and wellness advice from Swastik Homeopathy Clinic.</p>
 
-        <section className="blogs-grid">
-          {blogs.map((blog, index) => (
-            <div className="blog-card" key={index}>
+        <div className="blogs-grid">
+          {blogs.map(blog => (
+            <div className="blogs-card" key={blog.id}>
               <img src={blog.imageUrl} alt={blog.title} />
-              <h3>{blog.title}</h3>
-              <p>{blog.summary}</p>
-              <a className="learn-more" href={`/blogs/${blog.id}`}>Learn More</a>
+              <div className="blogs-card-content">
+                <h4>{blog.title}</h4>
+                <p>{blog.description}</p>
+                <a href={`/blogs/${blog.id}`}>Read More</a>
+              </div>
             </div>
           ))}
-        </section>
+        </div>
       </main>
-      <BlogFAQ />
       <Footer />
     </>
   );
