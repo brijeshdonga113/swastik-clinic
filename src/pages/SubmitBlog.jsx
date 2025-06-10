@@ -6,9 +6,12 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './SubmitBlog.css';
 
-import MDEditor from '@uiw/react-md-editor'; // ✨ NEW editor import
+import MDEditor from '@uiw/react-md-editor';
 
 const SubmitBlog = () => {
+  const CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
+  const UPLOAD_PRESET = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
+
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -17,16 +20,48 @@ const SubmitBlog = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [uploading, setUploading] = useState(false);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleContentChange = value => {
+  const handleContentChange = (value) => {
     setFormData({ ...formData, content: value || '' });
   };
 
-  const handleSubmit = async e => {
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setUploading(true);
+
+    const data = new FormData();
+    data.append('file', file);
+    data.append('upload_preset', UPLOAD_PRESET);
+
+    try {
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+        method: 'POST',
+        body: data,
+      });
+
+      const result = await res.json();
+
+      if (result.secure_url) {
+        setFormData((prev) => ({ ...prev, imageUrl: result.secure_url }));
+      } else {
+        console.error('Cloudinary upload failed:', result);
+        alert('Image upload failed. Please try again.');
+      }
+      setUploading(false);
+    } catch (error) {
+      console.error('Image upload error:', error);
+      setUploading(false);
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await addDoc(collection(db, 'blogs'), {
@@ -64,25 +99,28 @@ const SubmitBlog = () => {
             onChange={handleChange}
             required
           />
-          <input
-            type="text"
-            name="imageUrl"
-            placeholder="Image URL"
-            value={formData.imageUrl}
-            onChange={handleChange}
-            required
-          />
+
+          <label>Upload Image:</label>
+          <input type="file" accept="image/*" onChange={handleImageUpload} />
+          {uploading && <p>Uploading image...</p>}
+          {formData.imageUrl && (
+            <img
+              src={formData.imageUrl}
+              alt="Preview"
+              style={{ width: '200px', margin: '1rem 0', borderRadius: '8px' }}
+            />
+          )}
 
           <label>Blog Content:</label>
-          <div data-color-mode="light">
-            <MDEditor
-              value={formData.content}
-              onChange={handleContentChange}
-              height={300}
-            />
-          </div>
+          <MDEditor
+            value={formData.content}
+            onChange={handleContentChange}
+            style={{ minHeight: '300px' }}
+          />
 
-          <button type="submit" className="btn">Submit Blog</button>
+          <button type="submit" className="btn" disabled={uploading}>
+            {uploading ? 'Uploading Image...' : 'Submit Blog'}
+          </button>
         </form>
       </main>
       <Footer />

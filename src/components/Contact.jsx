@@ -1,30 +1,48 @@
 import React from 'react';
 import './Contact.css';
+import { FaInstagram, FaFacebookF, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 
 const Contact = () => {
   return (
     <section id="contact" className="contact-section">
-      <div className="contact-header">
-        <h2>Please feel free to contact us</h2>
-        <p>
-          If you need any further information, visit us at the clinic or fill the form below. <br />
-          Contact us today to book your appointment and experience the power of homeopathy.
-        </p>
-      </div>
+      <h2>Please feel free to contact us</h2>
+      <p>If you need any further information, visit us at any of our 3 clinics or fill the form below.</p>
 
-      <div className="contact-content">
-        <div className="contact-map">
+      {/* Locations */}
+      <div className="locations">
+        <div className="location-card">
+          <h3>📍 Surat Clinic</h3>
           <iframe
-            title="Google Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.4675099392745!2d72.87459407519864!3d21.2131568804709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0533c65adbe73%3A0xb5c64b0d6e6a85d7!2sPoddar%20Arcade%2C%20Surat!5e0!3m2!1sen!2sin!4v1715774560000!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
+            title="Surat Map"
+            src="https://www.google.com/maps?q=Varachha+Main+Rd,+Dharmeliya+Nagar,+Surat,+Gujarat+395006&output=embed"
             loading="lazy"
           ></iframe>
+          <p>Poddar Arcade, Varachha Main Rd, Dharmeliya Nagar,<br />Surat, Gujarat 395006</p>
         </div>
 
+        <div className="location-card">
+          <h3>📍 Junagadh Clinic</h3>
+          <iframe
+            title="Junagadh Map"
+            src="https://www.google.com/maps?q=Junagadh+Homeopathy+Clinic,+Gujarat&output=embed"
+            loading="lazy"
+          ></iframe>
+          <p>Swastik Homeopathy, Joshipura Main Road,<br />Junagadh, Gujarat</p>
+        </div>
+
+        <div className="location-card">
+          <h3>📍 Ahmedabad Clinic</h3>
+          <iframe
+            title="Ahmedabad Map"
+            src="https://www.google.com/maps?q=Ahmedabad+Homeopathy+Clinic,+Gujarat&output=embed"
+            loading="lazy"
+          ></iframe>
+          <p>Swastik Homeopathy, Maninagar East,<br />Ahmedabad, Gujarat</p>
+        </div>
+      </div>
+
+      {/* Contact form + info */}
+      <div className="contact-content">
         <form
           className="contact-form"
           onSubmit={async (e) => {
@@ -60,8 +78,28 @@ const Contact = () => {
           <input type="tel" name="phone" placeholder="Phone Number" required />
           <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
           <button type="submit">Submit</button>
-      </form>
+        </form>
 
+        <div className="contact-info">
+          <h3>Contact Info</h3>
+          <p>📞 <strong>Phone:</strong> <a href="tel:+918866199376">+91 88661 99376</a></p>
+
+          <h4>Follow us:</h4>
+          <div className="social-links">
+            <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener noreferrer">
+              <FaInstagram /> Instagram
+            </a>
+            <a href="https://www.facebook.com/YOUR_FACEBOOK" target="_blank" rel="noopener noreferrer">
+              <FaFacebookF /> Facebook
+            </a>
+            <a href="https://wa.me/918866199376" target="_blank" rel="noopener noreferrer">
+              <FaWhatsapp /> WhatsApp
+            </a>
+            <a href="https://www.youtube.com/YOUR_YOUTUBE" target="_blank" rel="noopener noreferrer">
+              <FaYoutube /> YouTube
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
