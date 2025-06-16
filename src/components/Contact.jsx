@@ -82,9 +82,9 @@ const Contact = () => {
 
         <div className="contact-info">
           <h3>Contact Info</h3>
-          <p>📞 <strong>Phone:</strong> <a href="tel:+918866199376">+91 88661 99376</a></p>
+          <p>📞 <strong></strong> <a href="tel:+918866199376">+91 88661 99376</a></p>
 
-          <h4>Follow us:</h4>
+          <h3>Follow us:</h3>
           <div className="social-links">
             <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener noreferrer">
               <FaInstagram /> Instagram
