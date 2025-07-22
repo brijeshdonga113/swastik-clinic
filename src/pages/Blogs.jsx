@@ -36,7 +36,6 @@ const Blogs = () => {
          <div className="container">
         <h2>Our Health Blog</h2>
         <p>Explore health tips, insights, and articles curated by our experts to support your well-being.</p>
-
         <div className="blogs-grid">
           {blogs.map(blog => (
             <div className="blogs-card" key={blog.id}>
