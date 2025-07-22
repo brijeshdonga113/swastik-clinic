@@ -1,0 +1,69 @@
+.about-page {
+  padding: 2rem 1rem;
+  background: #ffffff;
+}
+
+.about-page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.about-page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-page-header h2 {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.about-page-intro {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.about-page-card {
+  background: #eaf9fa;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-page-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: radial-gradient(circle at center, #eaf9fa, #ffffff);
+  padding: 8px; /* optional: adds soft ring */
+}
+
+.about-page-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+}
+
+.about-page-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}

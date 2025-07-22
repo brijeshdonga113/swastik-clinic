@@ -1,0 +1,79 @@
+.why-homeopathy {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 2rem;
+  background-color: #eaf9fa;
+  border-radius: 20px;
+  gap: 2rem;
+  padding: 2rem 2rem 4rem;
+}
+
+.why-content {
+  flex: 0 0 66%;
+  max-width: 66%;
+}
+
+.why-content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.why-card {
+  /* background: #fff; */
+  padding: 1.2rem;
+  border-radius: 16px;
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.05); */
+}
+
+.why-icon {
+  padding: 12px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary-color); /* circular border */
+  width: 48px;
+  height: 48px;
+  color: var(--primary-color); /* icon color */
+  font-size: 20px;
+}
+
+.why-image {
+  flex: 0 0 30%;
+  max-width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.why-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .why-homeopathy {
+    flex-direction: column;
+  }
+
+  .why-content,
+  .why-image {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}

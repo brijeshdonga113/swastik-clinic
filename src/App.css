@@ -1,0 +1,127 @@
+:root {
+  --primary-color: #0d7276;
+  --secondary-color: #9ec23c;
+  --third-color: #ffffff;
+  --text-on-primary: #ffffff;
+
+  --global-padding-x: 1.5rem;
+  --global-padding-y: 2rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--third-color);
+  color: #002d4c;
+}
+
+body, .App {
+  /* text-align: center; */
+}
+
+/* Layout Containers */
+.container,
+.page-container,
+main,
+section,
+footer,
+header {
+  width: 100%;
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  /* padding: var(--global-padding-y) var(--global-padding-x); */
+  box-sizing: border-box;
+}
+
+/* Section spacing */
+/* .section {
+  margin: 2rem 0;
+} */
+
+.section:first-child {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+/* Headings */
+.section h2,
+.page-heading {
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Images */
+img.rounded,
+.site-logo,
+.footer-logo {
+  border-radius: 20px;
+  max-width: 100%;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Logo adjustments */
+.site-logo {
+  height: 50px;
+  position: static;
+  transform: none;
+}
+
+/* Animation */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  :root {
+    --global-padding-x: 1rem;
+    --global-padding-y: 1.5rem;
+  }
+
+  .section h2,
+  .page-heading {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+}
